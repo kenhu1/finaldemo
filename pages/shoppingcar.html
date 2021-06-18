@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="www.frebsite.nl" />
+    <meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>購物車</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/mmenu.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Farro&family=Oswald:wght@200&family=Pattaya&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="page">
+        <div class="header headlist yyy mmm1">
+            <a href="#menu"><span></span></a>
+
+            <p class="cb">C.B</p>
+
+        </div>
+
+
+
+
+        <div id="app" class="ssss">
+            <div class="container sss">
+                <div class="item_header">
+                    <div class="item_detail">商品</div>
+                    <div class="p">單價</div>
+                    <div class="count">數量</div>
+                    <div class="amount">總計</div>
+                    <div class="operate">操作</div>
+                </div>
+                <div class="item_container" v-for="(item, index) in itemList" :key="item.id">
+                    <div class="item_header item_body">
+                        <div class="item_detail">
+                            <img v-bind:src="item.imgUrl" alt="">
+                            <div class="name">{{item.itemName}}</div>
+                        </div>
+
+                        <div class="p"><span>$</span>{{item.p}}</div>
+                        <div class="count">
+                            <button @click="handleSub(item)">-</button> {{item.count}}
+                            <button @click="handlePlus(item)">+</button>
+                        </div>
+                        <div class="amount">{{item.p * item.count}}</div>
+                        <div class="operate">
+                            <button @click="handledelete(index)">刪除</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <footer class="footer12 rrr">
+
+            <div>
+
+                <p class="ppp">
+                    Copyright © 2021 CYIM <br> 32023 桃園市中壢區中北路200號 <br> Tel：+886-3-265-9999 , +886-3-456-317</p>
+            </div>
+
+        </footer>
+        <nav id="menu">
+            <form>
+                <div class="box">
+                    <div class="container-1">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                </div>
+            </form>
+            <ul>
+
+                <li>
+                    <a href="./newindex.html" onclick="myFunction()" class="ali"><img src="../assets/img/home.png" class="imgg">&nbsp;HOME</a>
+                </li>
+
+                <li>
+                    <a href="./items.html" class="ali"><img src="../assets/img/hot.png" class="imgg">&nbsp;HOT</a>
+                </li>
+                <li>
+                    <span><a class="ali"><img src="../assets/img/information.png" class="imgg">&nbsp;ABOUT</a></span>
+                    <ul>
+                        <li>
+                            <a href="./logo.html" class="ali"><img src="../assets/img/logo-design.png" class="imgg">&nbsp;LOGO</a>
+                        </li>
+                        <li>
+                            <a href="./question.html" class="ali"><img src="../assets/img/question.png" class="imgg">&nbsp;QUESTION</a>
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <li class="alil"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER</li>
+                <br>
+                <li>
+                    <a href="./member.html" class="ali"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER PROFILE</a>
+                </li>
+                <li>
+                    <a href="./memberbuy.html" class="ali"><img src="../assets/img/member-card.png" class="imgg">&nbsp;PURCHASE RECORD</a>
+                </li>
+                <li>
+                    <a href="./shoppingcar.html" class="ali"><img src="../assets/img/shopping-cart.png" class="imgg">&nbsp;SHOPPING CAR</a>
+                </li>
+                <li>
+                    <a href="./index.html" onclick="myFunction1()" class="ali"><img src="../assets/img/sign-out.png" class="imgg">&nbsp;SIGN OUT</a>
+                </li>
+            </ul>
+
+
+        </nav>
+    </div>
+
+    <!-- scripts -->
+    <script>
+        function myFunction() {
+            confirm("您現在正在進入首頁");
+        }
+
+        function myFunction1() {
+            confirm("您是否選擇登出?");
+        }
+    </script>
+    <script src="../assets/js/mmenu.polyfills.js"></script>
+    <script src="../assets/js/mmenu.js"></script>
+    <script>
+        new Mmenu(document.querySelector('#menu'));
+
+        document.addEventListener('click', function(evnt) {
+            var anchor = evnt.target.closest('a[href^="#/"]');
+            if (anchor) {
+                alert("Thank you for clicking, but that's a demo link.");
+                evnt.preventDefault();
+            }
+        });
+    </script>
+
+
+</body>
+<script src="../assets/js/main.js"></script>
+
+</html>
+<!--購物車結束 -->

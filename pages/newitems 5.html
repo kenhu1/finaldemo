@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="www.frebsite.nl" />
+    <meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>商品列</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Farro&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../assets/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/mmenu.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Farro&family=Oswald:wght@200&family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="http://hovertree.com/texiao/js/4/hvtjs4.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assets/css/float.css" />
+    <base target="_blank" />
+    <script href="/assets/js/43432.js"></script>
+    <link type="text/css" rel="stylesheet" href="../assets/css/liuyanban.css" />
+</head>
+<script type="text/javascript" src="../assets/js/jquery-2.1.4.min.js"></script>
+
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    $(window).load(function() {
+        var $win = $(window),
+            $ad = $('#abgne_float_ad').css('opacity', 0).show(), // 讓廣告區塊變透明且顯示出來
+            _width = $ad.width(),
+            _height = $ad.height(),
+            _diffY = 20,
+            _diffX = 20,
+            _moveSpeed = 800;
+
+
+        $ad.css({
+            top: $(document).height(),
+            left: $win.width() - _width - _diffX,
+            opacity: 1
+        });
+
+        $win.bind('scroll resize', function() {
+            var $this = $(this);
+
+            $ad.stop().animate({
+                top: $this.scrollTop() + $this.height() - _height - _diffY,
+                left: $this.scrollLeft() + $this.width() - _width - _diffX
+            }, _moveSpeed);
+        }).scroll();
+
+        $('#abgne_float_ad .abgne_close_ad').click(function() {
+            $ad.hide();
+        });
+    });
+</script>
+<script type="text/javascript">
+    //留言板
+    var named;
+
+    function delete1(id) {
+        localStorage.removeItem(id);
+        this.Storage.writeData();
+    }
+
+    function prom() {
+
+        var name = prompt("请输入您的名稱", "");
+        named = name;
+
+
+        if (named)
+
+        {
+
+            alert("歡迎您：" + name)
+            document.getElementById("shangtian").style.display = "none";
+            document.getElementById("ritian").value = named;
+
+        } else {
+            document.getElementById("ritian").value = "匿名";
+        }
+
+    }
+    var Storage = {
+        saveData: function() {
+
+            var data = document.querySelector("#post textarea");
+            if (data.value != "") {
+                var time = new Date().getTime() + Math.random() * 5;
+                if (named) {
+                    localStorage.setItem(time, data.value + "|" + named + "|" + this.getDateTime());
+                } else {
+                    localStorage.setItem(time, data.value + "|" + "匿名" + "|" + this.getDateTime());
+                }
+
+                data.value = "";
+                this.writeData();
+            } else {
+                alert("請填寫您的留言！");
+            }
+        },
+        writeData: function() {
+            var dataHtml = "",
+                data = "";
+            for (var i = localStorage.length - 1; i >= 0; i--) {
+                data = localStorage.getItem(localStorage.key(i)).split("|");
+
+                //dataHtml += "<p><span class=\"msg\">" + data[0] + "</span><span class=\"datetime\">" + data[1] + "</span><span>" + data[2]+"</span></p>";
+                dataHtml += "<span style=>" + data[1] + "<span style=\"float:right\">" + data[2] + "</span><p><span class=\"msg\">" + data[0] + "<input style=\"float:right;border:none;border-radius:5px;\" id=\"clearBt\" type=\"button\" onclick=\"delete1(" + localStorage.key(i) + ");\" value=\"删除\"/>" + "</span></p>";
+            }
+            document.getElementById("comment").innerHTML = dataHtml;
+        },
+        clearData: function() {
+            if (localStorage.length > 0) {
+                if (window.confirm("清空后不可恢复，是否确認清空？")) {
+                    localStorage.clear();
+                    this.writeData();
+                }
+            } else {
+                alert("没有需要清空的數據！");
+            }
+        },
+        getDateTime: function() {
+            var isZero = function(num) {
+                if (num < 10) {
+                    num = "0" + num;
+                }
+                return num;
+            }
+
+            var d = new Date();
+            return d.getFullYear() + "-" + isZero(d.getMonth() + 1) + "-" + isZero(d.getDate()) + " " + isZero(d.getHours()) + ":" + isZero(d.getMinutes()) + ":" + isZero(d.getSeconds());
+        }
+    }
+
+    window.onload = function() {
+        Storage.writeData();
+        document.getElementById("postBt").onclick = function() {
+            Storage.saveData();
+        }
+        document.getElementById("clearBt").onclick = function() {
+            Storage.clearData();
+        }
+    }
+</script>
+
+<body>
+
+    <div id="page">
+        <div class="header headlist qwe1">
+            <a href="#menu"><span></span></a>
+
+            <p class="cb">C.B</p>
+
+        </div>
+        <!--<div>
+            <a><img src="./assets/img/logo.png" style="isplay: block;width: 50%;position: fixed;left: 45%;height: 100px;width: auto;"></a>
+        </div>-->
+
+        <div class="prod-card mmm">
+            <div class="top-section">
+                <img id="image-container" src="../assets/img/a5.jpg" alt="">
+            </div>
+            <div class="nav1">
+                <img onclick="change_img(this)" src="../assets/img/a5.1.jpg" alt="">
+                <img onclick="change_img(this)" src="../assets/img/a5.2.jpg" alt="">
+                <img onclick="change_img(this)" src="../assets/img/a5.3.jpg" alt="">
+            </div>
+            <div class="prod-info">
+                <h2>Original T-shirt From DarkCode</h2>
+                <span class="desc">Awesome T-shirt For Men</span>
+                <span class="price"><i class="ion-social-usd"></i>380 </span>
+                <h3>Sizes</h3>
+                <span>
+                      <label>X</label>
+                      <label>L</label>
+                      <label>XL</label>
+                      <label>XXL</label>
+                    </span>
+                <h3>Colors</h3>
+                <span>
+                      <label>blue</label>
+             </span>
+
+                <a class="addbtn" href="#" onclick="myFunction1()"><i class="ion-bag"></i>Add to Cart</a>
+            </div>
+        </div>
+
+        <!--留言板開始-->
+        <div class="q660">
+            <div id="content12">
+                <div id="post">
+                    <div class="q661">
+                        名稱：<input type="submit" id="shangtian" name="Submit3" class="q662" value="點擊更改名稱" onclick="prom()" />
+                        <input type="text" id="ritian" class="q662" onclick="prom()" />
+                        <!--disabled="disabled"-->
+                    </div>
+                    <!---星級評分開始-->
+                    <div class="rating">
+                        評分
+                        <input type="radio" id="star5" name="rating" value="5" hidden/>
+                        <label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4" hidden/>
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3" hidden/>
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2" hidden/>
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1" hidden/>
+                        <label for="star1"></label>
+                    </div>
+                    <!---星級評分結束-->
+                    <div>
+                        <textarea class="transition"></textarea>
+                    </div>
+                    <input id="postBt" type="button" class="q66" value="留言" />
+                    <input id="clearBt" type="button" class="q66" value="清空" />
+                </div>
+                <div id="comment"></div>
+            </div>
+        </div>
+
+        <div class="q6">
+        </div>
+        <!--留言板結束-->
+        <!-- 浮動特賣 -->
+        <div class="float_layer_hovertree fff" id="hovertree_float_layer">
+            <h2 class="h22">特賣商品下殺8折!!
+                <a id="btn_min" href="javascript:;" class="min" target="_self"></a>
+                <a id="btn_close" href="javascript:;" class="close" target="_self"></a>
+            </h2>
+            <div class="content">
+                <div class="wrap">
+                    <a href="./hot.html" target="_blank">
+                        <img src="../assets/img/a1.1.jpg" width="400" height="400" class="simg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 結束 -->
+        <!--新動態廣告開始-->
+        <div id="abgne_float_ad">
+            <p class="pabg"> NEW HOT</p>
+            <span class="abgne_close_ad">關閉 [X]</span>
+            <a href="./hot.html" target="_blank">
+                <img src="../assets/img/nett.png" class="imgabg" title="優質好物盡在C.B" />
+            </a>
+        </div>
+        <!--新動態廣告結束-->
+        <footer class="footer12 rrr">
+
+            <div>
+
+                <p class="ppp">
+                    Copyright © 2021 CYIM <br> 32023 桃園市中壢區中北路200號 <br> Tel：+886-3-265-9999 , +886-3-456-317</p>
+            </div>
+
+        </footer>
+
+
+
+        <script type="text/javascript">
+            var container = document.getElementById("image-container");
+
+            function change_img(image) {
+                container.src = image.src;
+            }
+        </script>
+
+
+        <nav id="menu">
+            <form>
+                <div class="box">
+                    <div class="container-1">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                </div>
+            </form>
+            <ul>
+
+                <li>
+                    <a href="./newindex.html" onclick="myFunction()" class="ali"><img src="../assets/img/home.png" class="imgg">&nbsp;HOME</a>
+                </li>
+
+                <li>
+                    <a href="./hot.html" class="ali"><img src="../assets/img/hot.png" class="imgg">&nbsp;HOT</a>
+                </li>
+                <li>
+                    <span><a class="ali"><img src="../assets/img/information.png" class="imgg">&nbsp;ABOUT</a></span>
+                    <ul>
+                        <li>
+                            <a href="./newlogo.html" class="ali"><img src="../assets/img/logo-design.png" class="imgg">&nbsp;LOGO</a>
+                        </li>
+                        <li>
+                            <a href="./newquestion.html" class="ali"><img src="../assets/img/question.png" class="imgg">&nbsp;QUESTION</a>
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <li class="alil"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER</li>
+                <br>
+                <li>
+                    <a href="./member.html" class="ali"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER PROFILE</a>
+                </li>
+                <li>
+                    <a href="./memberbuy.html" class="ali"><img src="../assets/img/member-card.png" class="imgg">&nbsp;PURCHASE RECORD</a>
+                </li>
+                <li>
+                    <a href="./shoppingcar.html" class="ali"><img src="../assets/img/shopping-cart.png" class="imgg">&nbsp;SHOPPING CAR</a>
+                </li>
+                <li>
+                    <a href="./index.html" onclick="myFunction1()" class="ali"><img src="../assets/img/sign-out.png" class="imgg">&nbsp;SIGN OUT</a>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <!-- scripts -->
+    <script>
+        function myFunction() {
+            confirm("您現在正在進入首頁");
+        }
+
+        function myFunction1() {
+            confirm("您是否選擇登出?");
+        }
+    </script>
+    <script src="../assets/js/mmenu.polyfills.js"></script>
+    <script src="../assets/js/mmenu.js"></script>
+    <script>
+        new Mmenu(document.querySelector('#menu'));
+
+        document.addEventListener('click', function(evnt) {
+            var anchor = evnt.target.closest('a[href^="#/"]');
+            if (anchor) {
+                alert("Thank you for clicking, but that's a demo link.");
+                evnt.preventDefault();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

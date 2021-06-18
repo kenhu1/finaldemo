@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="www.frebsite.nl" />
+    <meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>會員資料</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/mmenu.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Farro&family=Oswald:wght@200&family=Pattaya&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="page">
+        <div class="header headlist">
+            <a href="#menu"><span></span></a>
+
+            <p class="cb">C.B</p>
+
+        </div>
+        <!--<div>
+            <a><img src="./assets/img/logo.png" style="isplay: block;width: 50%;position: fixed;left: 45%;height: 100px;width: auto;"></a>
+        </div>-->
+
+        <div class="mem1">
+
+        </div>
+        <div class="mem2">
+            <h1 class="mem3">會員資料系統</h1>
+        </div>
+        <div class="mem4">
+            <form>
+                <fieldset class="memb">
+                    <legend>個人資料</legend>
+                    1.名稱:<input type="text"><br><br> 2.生日:
+                    <input type="date" name="selectdate" />
+                    <br><br> 3.性別:
+                    <input type="radio" name="sex" value="male" checked/>男
+                    <input type="radio" name="sex" value="female" checked/>女
+                    <br><br> 4.電話:
+                    <input type="text2">
+                    <br><br>5.電子郵件:
+                    <input type="text2">
+                    <br><br> 6.血型:
+                    <select size="1" name="project">
+                    <option>A型</option>
+                    <option>B型</option>
+                    <option>AB型</option>
+                    <option>O型</option>
+                    <option>無意願</option>
+                    </select>
+
+                </fieldset>
+                <br>
+                <input type="submit" value="確認編輯" />
+                <input type="reset" value="重填" />
+            </form>
+            <br><br><br>
+            <form>
+                <fieldset class="memb">
+                    <legend>商品意見調查</legend>
+                    1.商品選材的滿意程度<input type="radio" name="absent" value="a1" checked/>沒有缺課
+                    <input type="radio" name="absent" value="a2" checked/>差
+                    <input type="radio" name="absent" value="a3" checked/>尚可
+                    <input type="radio" name="absent" value="a4" checked/>滿意
+                    <br> 2.您對本公司電商網站滿意度
+                    <input type="radio" name="learning" value="e1" checked/>差
+                    <input type="radio" name="learning" value="e1" checked/>尚可
+                    <input type="radio" name="learning" value="e1" checked/>滿意
+                    <br> 3.您是否有以下感覺<br>
+                    <input type="checkbox" name="interest" value="必修">貨物運送太慢
+                    <input type="checkbox" name="interest" value="其他原因">網站使用不便利
+                    <input type="checkbox" name="interest" value="湊學分">商品不夠好看
+                    <input type="checkbox" name="interest" value="個人興趣">價格不夠實惠
+                    <input type="checkbox" name="interest" value="其他原因">其他原因
+                    <input type="checkbox" name="interest" value="其他原因">無
+                    <br> 4.請簡述您對此本公司的期望或改進的建議:
+                    <br>
+                    <textarea name="memo" cols="80" rows="4" wrap="hard"></textarea>
+                </fieldset>
+                <br>
+                <input type="submit" value="送出" />
+                <input type="reset" value="重填" />
+            </form>
+        </div>
+
+        <footer class="footer">
+
+            <div>
+
+                <p class="ppp">觀看人數:
+                    <br> Copyright © 2021 CYIM <br> 32023 桃園市中壢區中北路200號 <br> Tel：+886-3-265-9999 , +886-3-456-317</p>
+            </div>
+
+        </footer>
+        <nav id="menu">
+            <form>
+                <div class="box">
+                    <div class="container-1">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                </div>
+            </form>
+            <ul>
+
+                <li>
+                    <a href="./newindex.html" onclick="myFunction()" class="ali"><img src="../assets/img/home.png" class="imgg">&nbsp;HOME</a>
+                </li>
+
+                <li>
+                    <a href="./hot.html" class="ali"><img src="../assets/img/hot.png" class="imgg">&nbsp;HOT</a>
+                </li>
+                <li>
+                    <span><a class="ali"><img src="../assets/img/information.png" class="imgg">&nbsp;ABOUT</a></span>
+                    <ul>
+                        <li>
+                            <a href="./newlogo.html" class="ali"><img src="../assets/img/logo-design.png" class="imgg">&nbsp;LOGO</a>
+                        </li>
+                        <li>
+                            <a href="./newquestion.html" class="ali"><img src="../assets/img/question.png" class="imgg">&nbsp;QUESTION</a>
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <li class="alil"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER</li>
+                <br>
+                <li>
+                    <a href="./member.html" class="ali"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER PROFILE</a>
+                </li>
+                <li>
+                    <a href="./memberbuy.html" class="ali"><img src="../assets/img/member-card.png" class="imgg">&nbsp;PURCHASE RECORD</a>
+                </li>
+                <li>
+                    <a href="./shoppingcar.html" class="ali"><img src="../assets/img/shopping-cart.png" class="imgg">&nbsp;SHOPPING CAR</a>
+                </li>
+                <li>
+                    <a href="./index.html" onclick="myFunction1()" class="ali"><img src="../assets/img/sign-out.png" class="imgg">&nbsp;SIGN OUT</a>
+                </li>
+            </ul>
+
+
+        </nav>
+    </div>
+
+    <!-- scripts -->
+    <script>
+        function myFunction() {
+            confirm("您現在正在進入首頁");
+        }
+
+        function myFunction1() {
+            confirm("您是否選擇登出?");
+        }
+    </script>
+    <script src="../assets/js/mmenu.polyfills.js"></script>
+    <script src="../assets/js/mmenu.js"></script>
+    <script>
+        new Mmenu(document.querySelector('#menu'));
+
+        document.addEventListener('click', function(evnt) {
+            var anchor = evnt.target.closest('a[href^="#/"]');
+            if (anchor) {
+                alert("Thank you for clicking, but that's a demo link.");
+                evnt.preventDefault();
+            }
+        });
+    </script>
+
+
+</body>
+<script src="../assets/js/main.js"></script>
+
+</html>
+<!--購物車結束 -->

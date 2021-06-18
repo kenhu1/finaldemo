@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="www.frebsite.nl" />
+    <meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>程式</title>
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <link href="https://fonts.googleapis.com/css2?family=Farro&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../assets/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/mmenu.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/mmenu.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Farro&family=Oswald:wght@200&family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="page">
+        <div class="header headlist">
+            <a href="#menu"><span></span></a>
+            
+        <p class="cb">C.B</p>
+
+        </div>
+
+        <div class="content">
+            <div class="dpad" style="position:relative;">           
+                <img src="../assets/img/logo.png">
+    <p style="position: absolute;left: 300px;">理念</p>
+                   
+                    </div>
+                    <div style="margin-top: 2000px;"></div>
+            
+            
+
+        </div>
+        <footer class="footer12">
+            
+            <div>
+
+                <p class="ppp">
+                    Copyright © 2021 CYIM <br>
+                    32023 桃園市中壢區中北路200號 <br>
+                    Tel：+886-3-265-9999 , +886-3-456-317</p>
+            </div>
+
+        </footer>
+        <nav id="menu">
+            <form>
+            <div class="box">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input type="search" id="search" placeholder="Search..." />
+                </div>
+              </div>
+            </form>
+            <ul>
+
+                <li><a href="../pages/index.html" class="ali"><img src="../assets/img/home.png" class="imgg">&nbsp;HOME</a></li>
+                
+                <li><a href="#contact" class="ali"><img src="../assets/img/hot.png" class="imgg">&nbsp;HOT</a></li>
+                <li>
+                    <span><a class="ali"><img src="../assets/img/information.png" class="imgg">&nbsp;ABOUT</a></span>
+                    <ul>
+                        <li><a href="#about/history" class="ali"><img src="../assets/img/logo-design.png" class="imgg">&nbsp;LOGO</a></li>
+                        <li><a href="#about/address" class="ali"><img src="../assets/img/question.png" class="imgg">&nbsp;QUESTION</a></li>
+                    </ul>
+                </li>
+<br>
+                <li class="alil"><img src="../assets/img/member-card.png" class="imgg">&nbsp;MEMBER</li>
+                <br>
+                <li><a href="##" onclick="myFunction()" class="ali"><img src="../assets/img/shopping-cart.png" class="imgg">&nbsp;SHOPPING CAR</a></li>
+                <li><a href="../pages/sign.html" class="ali"><img src="../assets/img/sign-in.png" class="imgg">&nbsp;SIGN IN</a></li>
+            </ul>
+
+            
+        </nav>
+    </div>
+
+    <!-- scripts -->
+    <script>
+        function myFunction() {
+            confirm("請先登入帳號!!");
+        }
+        </script>
+    <script src="../assets/js/mmenu.polyfills.js"></script>
+    <script src="../assets/js/mmenu.js"></script>
+    <script>
+        new Mmenu(document.querySelector('#menu'));
+
+        document.addEventListener('click', function (evnt) {
+            var anchor = evnt.target.closest('a[href^="#/"]');
+            if (anchor) {
+                alert("Thank you for clicking, but that's a demo link.");
+                evnt.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
