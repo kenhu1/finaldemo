@@ -1,0 +1,56 @@
+
+.logo1{
+	height: 600px;
+    left: 300px;
+    border-radius:20px;
+    background-color: yellow;
+}
+.aaa{
+    left: 50%;
+}
+
+.test {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+.test1 {
+    right: 0;
+    animation-name: anim1;
+    animation-duration: 2s;
+}
+
+
+#img {
+    background-image: url('../img/a2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-fill-mode: forwards;
+}
+
+#img1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anim {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 350px;
+    }
+}
+
+@keyframes anim1 {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 350px;
+    }
+}

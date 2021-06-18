@@ -1,0 +1,270 @@
+input {
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+}
+
+#content12 #post,
+#comment p {
+    zoom: 1;
+}
+
+#content #post:after,
+#comment p:after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+    content: '.';
+}
+
+.transition {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+#content12 {
+    margin: 0 auto;
+    width: 500px;
+    overflow: hidden;
+}
+
+#content12 #post {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #d4d4d4 dashed;
+    height: 306px;
+}
+
+#content12 #post textarea {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 500px;
+    height: 190px;
+    border: 1px #d1d1d1 solid;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+}
+
+#content12 #post textarea:hover {
+    border: 1px #989993 solid;
+    background: #aab3a6;
+}
+
+#content12 #post #postBt,
+#content12 #post #clearBt {
+    margin-left: 5px;
+    padding: 3px;
+    float: right;
+}
+
+#comment {
+    overflow: hidden;
+}
+
+#comment p {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#comment p:nth-child(odd) {
+    border: 1px solid #767772;
+    background: #a2a39f;
+}
+
+
+/*------留言回復列表-------*/
+
+#comment p:nth-child(even) {
+    border: 1px solid #767772;
+    background: #a2a39f;
+}
+
+
+/*#comment p span{display:inline; float:left;}*/
+
+#comment p .right {
+    text-align: right;
+}
+
+#comment p .msg {
+    width: 538px;
+}
+
+#comment12 p .datetime {
+    width: 100px;
+    color: #999;
+    text-align: right;
+}
+
+
+/*-----星星評分-----*/
+
+.rating {
+    font-size: 24;
+    display: block;
+    float: left;
+    height: 30px;
+    left: 400px;
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
+}
+
+.rating>label:before {
+    padding: 5px;
+    font-size: 24px;
+    line-height: 1em;
+    display: inline-block;
+    content: "★";
+}
+
+.rating>input:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+.rating>input:checked~label:hover~label {
+    opacity: 0.5;
+}
+
+
+/*------擴充細修---------*/
+
+.q6 {
+    margin-top: 600px;
+}
+
+
+/*----細修留言板-------*/
+
+.q660 {
+    margin-top: 200px;
+    position: absolute;
+    left: 200px;
+    color: #000;
+    z-index: -1;
+}
+
+.q661 {
+    background: #6b7375;
+    height: 30px;
+    left: 300px;
+}
+
+.q662 {
+    border: none;
+    background-color: #6b7375;
+    color: white;
+}
+
+
+/*-----細修留言清空------*/
+
+.q66 {
+    border: none;
+    background-color: #6b7375;
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+}
+
+
+/*---商品2數據---*/
+
+input {
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+}
+
+#content3 #post3,
+#comment3 p {
+    zoom: 1;
+}
+
+#content3 #post3:after,
+#comment3 p:after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+    content: '.';
+}
+
+.transition {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+#content3 {
+    margin: 0 auto;
+    width: 500px;
+    overflow: hidden;
+}
+
+#content3 #post3 {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #d4d4d4 dashed;
+    height: 306px;
+}
+
+#content3 #post3 textarea {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 500px;
+    height: 190px;
+    border: 1px #d1d1d1 solid;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+}
+
+#content3 #post3 textarea:hover {
+    border: 1px #989993 solid;
+    background: #aab3a6;
+}
+
+#content3 #post3 #postBt3,
+#content3 #post3 #clearBt3 {
+    margin-left: 5px;
+    padding: 3px;
+    float: right;
+}
+
+#comment3 {
+    overflow: hidden;
+}
+
+#comment3 p {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#comment3 p:nth-child(odd) {
+    border: 1px solid #767772;
+    background: #a2a39f;
+}
+
+
+/*---------------*/
